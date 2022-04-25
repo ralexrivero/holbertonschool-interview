@@ -23,8 +23,11 @@ def canUnlockAll(boxes):
     for key in keyChain:
         for k in key:
             openBox[k] = True
-            
+            """ if k not in keyChain and k < len(boxes) and openBox[k] == False: """
+            keyChain.append(boxes[k])
+            print(keyChain)
     print(openBox)
+
 
     """
     if any box is False (not open), return False
@@ -33,4 +36,5 @@ def canUnlockAll(boxes):
 
     if False in openBox:
         return False
+    else:
         return True
