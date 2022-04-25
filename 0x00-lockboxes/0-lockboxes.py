@@ -25,8 +25,6 @@ def canUnlockAll(boxes):
         for keys in boxes[key]:
             if keys not in keyChain and keys < len(boxes):
                 keyChain.append(keys)
-        print(keyChain)
-    print(openBox)
 
     """
     if any box is False (not open), return False
