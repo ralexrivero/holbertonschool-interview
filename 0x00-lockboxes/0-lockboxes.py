@@ -13,7 +13,7 @@ def canUnlockAll(boxes):
     """
     create a key chain to store keys retrieved from opened boxes
     """
-    keyChain = [[0]]
+    keyChain = [0, ]
 
     """
     got through key chain, open box if it is possible and
@@ -21,13 +21,12 @@ def canUnlockAll(boxes):
     and valids in the boxes range
     """
     for key in keyChain:
-        for k in key:
-            openBox[k] = True
-            """ if k not in keyChain and k < len(boxes) and openBox[k] == False: """
-            keyChain.append(boxes[k])
-            print(keyChain)
+        openBox[key] = True
+        for keys in boxes[key]:
+            if keys not in keyChain and keys < len(boxes):
+                keyChain.append(keys)
+        print(keyChain)
     print(openBox)
-
 
     """
     if any box is False (not open), return False
