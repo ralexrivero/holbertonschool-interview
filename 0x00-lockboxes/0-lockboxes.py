@@ -9,5 +9,5 @@ def canUnlockAll(boxes):
     to determine wich boxes are open
     """
     openBox = [False for i in range(len(boxes))]
-    print (openBox)
+    print(openBox)
     return True
