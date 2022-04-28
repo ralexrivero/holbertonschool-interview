@@ -9,6 +9,13 @@
 ╚══════╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝╚═════╝     ╚══════╝╚═╝╚══════╝   ╚═╝
 ```
 
+## objetive
+
+> Write a function in C that inserts a number into a sorted singly linked list.
+
+- Prototype: listint_t *insert_node(listint_t **head, int number);
+- Return: the address of the new node, or NULL if it failed
+
 ## Environment
 
 [![Ubuntu](https://img.shields.io/static/v1?label=&message=Ubuntu&color=E95420&logo=Ubuntu&logoColor=E95420&labelColor=2F333A)](https://ubuntu.com/)<!-- ubuntu -->
