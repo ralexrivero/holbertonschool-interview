@@ -27,6 +27,18 @@
 - `gcc` 4.8.4 `-Wall -Werror -Wextra and -pedantic`
 - `betty`
 
+- `make`
+
+> 'all'
+>
+> 'clean'
+>
+> 'oclean'
+>
+> 'fclean'
+>
+> 're'
+
 ## compilation
 
 `gcc -Wall -Werror -Wextra -pedantic 0-main.c linked_lists.c 0-insert_number.c -o insert`
