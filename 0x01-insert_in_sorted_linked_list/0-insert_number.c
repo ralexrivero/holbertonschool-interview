@@ -1,5 +1,27 @@
 #include "lists.h"
 /**
+ * insert_beginning - insert node at the beginning
+ *
+ * @head: head to the list
+ * @new_node: node to insert
+ * @header: header pointer
+ * Return: pointer to the list
+ */
+listint_t *insert_beginning(listint_t **head, listint_t *new_node,
+listint_t *header)
+{
+	listint_t *temp;
+
+		temp = malloc(sizeof(listint_t));
+		if (temp == NULL)
+			return (NULL);
+		temp = *head;
+		*head = new_node;
+		header = *head;
+		header->next = temp;
+		return (*head);
+}
+/**
  * insert_node - insert a number in sorted linked list
  *
  * @head: pointer to head of the list
@@ -8,7 +30,7 @@
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *new_node, *current, *header, *temp;
+	listint_t *new_node, *current, *header;
 
 	new_node = malloc(sizeof(listint_t));
 	if (new_node == NULL)
@@ -24,16 +46,7 @@ listint_t *insert_node(listint_t **head, int number)
 	current = header;
 	if (current->n >= number)
 	{
-		temp = malloc(sizeof(listint_t));
-		if (temp == NULL)
-		{
-			return (NULL);
-		}
-		temp = *head;
-		*head = new_node;
-		header = *head;
-		header->next = temp;
-		return (*head);
+		insert_beginning(head, new_node, header);
 	}
 	else
 	{
@@ -49,9 +62,11 @@ listint_t *insert_node(listint_t **head, int number)
 				current->next = new_node;
 				return (*head);
 			}
-			else if (header->next == NULL) /* insert at end */
-				current->next = new_node;
-
+			if (header->next == NULL) /* insert at end */
+			{
+				header->next = new_node;
+				return (*head);
+			}
 		}
 	}
 	return (*head);
