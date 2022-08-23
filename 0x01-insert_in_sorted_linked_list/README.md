@@ -29,6 +29,8 @@
 
 - `make`
 
+> 'betty' run Betty Style
+>
 > 'all'
 >
 > 'clean'
